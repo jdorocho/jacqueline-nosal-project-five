@@ -1,0 +1,15 @@
+// WELCOME 
+- User enters welcome page that explains what the app is about
+- There is an onClick button that dynamically changes the DOM
+
+// AGILE VALUES
+- User enters page that reviews the 4 Core Values of the Agile Manifesto
+- There is an onClick button that dynamically changes the DOM
+
+// PRINCIPLES CHECK-IN: PRINCPLES #1 - 6
+- For the next 6 pages, User is provided a description of the subsequent Agile principle, and asked a related question
+- User has a text box to log an answer
+- There is a button to submit and continue. The answer is pushed to Firebase
+
+// PRINCIPLES CHECK-IN: RECORDED LOGS
+- User enters a page that contains previous logs that have been captured (principles logged in Firebase displays on page), along with the date (would use getDate() method) they were captured 

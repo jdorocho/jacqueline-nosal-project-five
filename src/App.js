@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import './index.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Custom Imports
+import Values from './components/Values';
+import Principles from './components/Principles';
+import Recorded from './components/Recorded';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstButtonClicked: false
+    }
+  }
+
+  handleClick = () => {
+    console.log("Button is clicked");
+    return (
+      <Values />
+    );
+  }
+
+  render() {
+    return (
+      <main>
+        <section className="contents">
+          <div className="wrapper">
+            <h1>Welcome</h1>
+            <p className="welcome-text">The Agile Helper provides the opportunity to check-in with yourself on a regular basis, reflecting on the core principles behind your Agile practices</p>
+            <button onClick={this.handleClick} tabIndex="1">
+              <p>Continue to the Agile Values</p>
+            </button>
+          </div>
+        </section>
+        {/* <Values /> */}
+        {/* <Principles />
+        <Recorded /> */}
+      </main>
+    );
+  }
 }
 
 export default App;
