@@ -57,12 +57,9 @@ button {
   background-color: #DA9F93;
   border: 1px solid #463F3A;
   border-radius: 15px;
+  width: 100%;
   margin-top: 30px;
   padding: 25px 15px;
-}
-
-button:focus {
-  border: 3px dotted #FFF8E7;
 }
 
 main {
@@ -139,6 +136,14 @@ button p {
 
 .principles-top-text p {
   margin-top: 30px;
+}
+
+button:hover {
+  background-color: #d69a8e;
+}
+
+button:focus {
+  border: 3px dotted #FFF8E7;
 }
 
 @media (max-width: 525px) {

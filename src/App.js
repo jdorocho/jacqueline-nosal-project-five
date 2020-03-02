@@ -2,23 +2,29 @@ import React, { Component } from 'react';
 import './index.css';
 
 // Custom Imports
-import Values from './components/Values';
-import Principles from './components/Principles';
-import Recorded from './components/Recorded';
+import Welcome from './components/Welcome';
+import PrincipleOne from './components/PrincipleOne';
+// import PrincipleTwo from './components/PrincipleTwo';
+// import PrincipleThree from './components/PrincipleThree';
+// import PrincipleFour from './components/PrincipleFour';
+// import PrincipleFive from './components/PrincipleFive';
+// import PrincipleSix from './components/PrincipleSix';
+// import Recorded from './components/Recorded';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      firstButtonClicked: false
+      showWelcome: true,
+      showPrincipleOne: false
     }
   }
 
-  handleClick = () => {
-    console.log("Button is clicked");
-    return (
-      <Values />
-    );
+  showPrincipleOne = () => {
+      this.setState({
+          showPrincipleOne: true,
+          showWelcome: false
+      });
   }
 
   render() {
@@ -26,16 +32,12 @@ class App extends Component {
       <main>
         <section className="contents">
           <div className="wrapper">
-            <h1>Welcome</h1>
-            <p className="welcome-text">The Agile Helper provides the opportunity to check-in with yourself on a regular basis, reflecting on the core principles behind your Agile practices</p>
-            <button onClick={this.handleClick} tabIndex="1">
-              <p>Continue to the Agile Values</p>
+            {this.state.showWelcome ? <Welcome /> : <PrincipleOne />}
+            <button onClick={this.showPrincipleOne} tabIndex="1">
+                <p>Continue</p>
             </button>
           </div>
         </section>
-        {/* <Values /> */}
-        {/* <Principles />
-        <Recorded /> */}
       </main>
     );
   }
