@@ -15,15 +15,15 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      showWelcome: true,
-      showPrincipleOne: false
+      showingWelcome: true,
+      showingPrincipleOne: false
     }
   }
 
   showPrincipleOne = () => {
       this.setState({
-          showPrincipleOne: true,
-          showWelcome: false
+          showingWelcome: false, 
+          showingPrincipleOne: true
       });
   }
 
@@ -32,10 +32,7 @@ class App extends Component {
       <main>
         <section className="contents">
           <div className="wrapper">
-            {this.state.showWelcome ? <Welcome /> : <PrincipleOne />}
-            <button onClick={this.showPrincipleOne} tabIndex="1">
-                <p>Continue</p>
-            </button>
+            {this.state.showingWelcome ? <Welcome goToPrincipleOneProp={this.showPrincipleOne} /> : <PrincipleOne />}
           </div>
         </section>
       </main>
