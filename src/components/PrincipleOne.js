@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import '../index.css';
 
 class PrincipleOne extends Component {
+    sendDataToParent = () => {
+        this.props.goToPrincipleTwoProp();
+    }
+
     render() {
         return (
             <main>
@@ -15,7 +19,7 @@ class PrincipleOne extends Component {
                         <form action="submit">
                             <label htmlFor="reflection">Log your answer here:</label>
                             <input type="text"/>
-                            <button type="submit">
+                            <button onClick={this.sendDataToParent} type="submit">
                                 <p>Submit and Continue</p>
                             </button>
                         </form>
