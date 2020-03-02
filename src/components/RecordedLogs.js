@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../index.css';
 
-class Recorded extends Component {
+class RecordedLogs extends Component {
     render() {
         return (
             <main>
@@ -18,4 +18,4 @@ class Recorded extends Component {
     }
 }
 
-export default Recorded;
+export default RecordedLogs;

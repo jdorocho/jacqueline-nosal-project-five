@@ -9,7 +9,7 @@ import PrincipleThree from './components/PrincipleThree';
 import PrincipleFour from './components/PrincipleFour';
 import PrincipleFive from './components/PrincipleFive';
 import PrincipleSix from './components/PrincipleSix';
-import Recorded from './components/Recorded';
+import RecordedLogs from './components/RecordedLogs';
 
 class App extends Component {
   constructor() {
@@ -21,7 +21,8 @@ class App extends Component {
       showingPrincipleThree: false,
       showingPrincipleFour: false,
       showingPrincipleFive: false,
-      showingPrincipleSix: false
+      showingPrincipleSix: false, 
+      showingRecordedLogs: false
     }
   }
 
@@ -33,7 +34,8 @@ class App extends Component {
           showingPrincipleThree: false,
           showingPrincipleFour: false,
           showingPrincipleFive: false,
-          showingPrincipleSix: false
+          showingPrincipleSix: false, 
+          showingRecordedLogs: false
       });
   }
 
@@ -45,7 +47,8 @@ class App extends Component {
           showingPrincipleThree: false,
           showingPrincipleFour: false,
           showingPrincipleFive: false,
-          showingPrincipleSix: false
+          showingPrincipleSix: false, 
+          showingRecordedLogs: false
       });
   }
 
@@ -57,7 +60,60 @@ class App extends Component {
         showingPrincipleThree: true,
         showingPrincipleFour: false,
         showingPrincipleFive: false,
-        showingPrincipleSix: false
+        showingPrincipleSix: false, 
+        showingRecordedLogs: false
+    });
+  }
+
+  showPrincipleFour = () => {
+    this.setState({
+        showingWelcome: false, 
+        showingPrincipleOne: false,
+        showingPrincipleTwo: false,
+        showingPrincipleThree: false,
+        showingPrincipleFour: true,
+        showingPrincipleFive: false,
+        showingPrincipleSix: false, 
+        showingRecordedLogs: false
+    });
+  }
+
+  showPrincipleFive = () => {
+    this.setState({
+        showingWelcome: false, 
+        showingPrincipleOne: false,
+        showingPrincipleTwo: false,
+        showingPrincipleThree: false,
+        showingPrincipleFour: false,
+        showingPrincipleFive: true,
+        showingPrincipleSix: false, 
+        showingRecordedLogs: false
+    });
+  }
+
+  showPrincipleSix = () => {
+    this.setState({
+        showingWelcome: false, 
+        showingPrincipleOne: false,
+        showingPrincipleTwo: false,
+        showingPrincipleThree: false,
+        showingPrincipleFour: false,
+        showingPrincipleFive: false,
+        showingPrincipleSix: true, 
+        showingRecordedLogs: false
+    });
+  }
+
+  showRecordedLogs = () => {
+    this.setState({
+        showingWelcome: false, 
+        showingPrincipleOne: false,
+        showingPrincipleTwo: false,
+        showingPrincipleThree: false,
+        showingPrincipleFour: false,
+        showingPrincipleFive: false,
+        showingPrincipleSix: false, 
+        showingRecordedLogs: true
     });
   }
 
@@ -70,6 +126,10 @@ class App extends Component {
             {this.state.showingPrincipleOne ? <PrincipleOne goToPrincipleTwoProp={this.showPrincipleTwo} /> : null}
             {this.state.showingPrincipleTwo ? <PrincipleTwo goToPrincipleThreeProp={this.showPrincipleThree} /> : null}
             {this.state.showingPrincipleThree ? <PrincipleThree goToPrincipleFourProp={this.showPrincipleFour} /> : null}
+            {this.state.showingPrincipleFour ? <PrincipleFour goToPrincipleFiveProp={this.showPrincipleFive} /> : null}
+            {this.state.showingPrincipleFive ? <PrincipleFive goToPrincipleSixProp={this.showPrincipleSix} /> : null}
+            {this.state.showingPrincipleSix ? <PrincipleSix goToRecordedLogsProp={this.showRecordedLogs} /> : null}
+            {this.state.showingRecordedLogs ? <RecordedLogs /> : null}
           </div>
         </section>
       </main>
