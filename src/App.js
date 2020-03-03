@@ -30,10 +30,10 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // Firebase
     const dbRef = firebase.database().ref();
 
     dbRef.on('value', (response) => {
-      console.log(response.val());
 
       const newState = [];
       const data = response.val();
@@ -64,6 +64,7 @@ class App extends Component {
     this.setState({userInput: ""})
   }
 
+  // List of functions that determine which page is being shown
   showPrincipleOne = () => {
       this.setState({
           showingWelcome: false, 

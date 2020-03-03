@@ -14,7 +14,6 @@ class RecordedLogs extends Component {
     }
 
     render() {
-        console.log(this.props.startRecordingLogsProp);
         return (
             <main>
                 <section className="principles-contents">
