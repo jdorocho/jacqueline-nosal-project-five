@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f0289ece475b42839be175e2a82da0a4",
+    "revision": "4f81b04e5e8cef31ea27dcafdd91bbe8",
     "url": "/jacqueline-nosal-project-five/index.html"
   },
   {
-    "revision": "8cf1e1ac4bc2d6f72f58",
-    "url": "/jacqueline-nosal-project-five/static/css/main.c417d857.chunk.css"
+    "revision": "95e2e760276ff66765dc",
+    "url": "/jacqueline-nosal-project-five/static/css/main.d9ace173.chunk.css"
   },
   {
     "revision": "c9de1f6fd125e1ab0419",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jacqueline-nosal-project-five/static/js/2.a38c1a6a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8cf1e1ac4bc2d6f72f58",
-    "url": "/jacqueline-nosal-project-five/static/js/main.15f364ec.chunk.js"
+    "revision": "95e2e760276ff66765dc",
+    "url": "/jacqueline-nosal-project-five/static/js/main.d395eabc.chunk.js"
   },
   {
     "revision": "f3e7337cb9b454cc27d7",
