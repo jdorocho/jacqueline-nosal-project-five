@@ -3,7 +3,7 @@ import '../index.css';
 
 class PrincipleSix extends Component {
     sendDataToParent = () => {
-        this.props.goToRecordedProp();
+        this.props.goToRecordedLogsProp();
     }
 
     render() {

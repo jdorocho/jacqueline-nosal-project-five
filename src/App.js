@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './index.css';
 
 // Custom Imports
+import firebase from './firebase';
 import Welcome from './components/Welcome';
 import PrincipleOne from './components/PrincipleOne';
 import PrincipleTwo from './components/PrincipleTwo';
@@ -15,6 +16,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      logs: [],
       showingWelcome: true,
       showingPrincipleOne: false,
       showingPrincipleTwo: false,
@@ -24,6 +26,30 @@ class App extends Component {
       showingPrincipleSix: false, 
       showingRecordedLogs: false
     }
+  }
+
+  componentDidMount() {
+    const dbRef = firebase.database().ref();
+
+    dbRef.on('value', (response) => {
+      const newState = [];
+
+      const data = response.val();
+
+      for (let key in data) {
+        newState.push(data[key]);
+      }
+
+      this.setState({
+        books: newState
+      });
+    });
+  }
+
+  recordingLogs = () => {
+    this.state.logs.map((log) => {
+      return <li>{log}</li>
+    })
   }
 
   showPrincipleOne = () => {
@@ -129,7 +155,7 @@ class App extends Component {
             {this.state.showingPrincipleFour ? <PrincipleFour goToPrincipleFiveProp={this.showPrincipleFive} /> : null}
             {this.state.showingPrincipleFive ? <PrincipleFive goToPrincipleSixProp={this.showPrincipleSix} /> : null}
             {this.state.showingPrincipleSix ? <PrincipleSix goToRecordedLogsProp={this.showRecordedLogs} /> : null}
-            {this.state.showingRecordedLogs ? <RecordedLogs /> : null}
+            {this.state.showingRecordedLogs ? <RecordedLogs startRecordingLogsProp={this.recordingLogs} /> : null}
           </div>
         </section>
       </main>
