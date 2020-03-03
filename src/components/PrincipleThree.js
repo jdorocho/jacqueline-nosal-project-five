@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import '../index.css';
 
 class PrincipleThree extends Component {
-    sendDataToParent = () => {
+    handlePrincipleClick = (e) => {
         this.props.goToPrincipleFourProp();
+        this.props.handleClick(e, 'principleThree');
     }
 
     render() {
@@ -17,9 +18,16 @@ class PrincipleThree extends Component {
                             <p className="question">Did your team leverage timeboxed iterations to deliver working software frequently, and constantly adjust so that the project delivers the most value to the customer?</p>
                         </div>
                         <form action="submit">
-                            <label htmlFor="reflection">Log your answer here:</label>
-                            <input type="text"/>
-                            <button onClick={this.sendDataToParent} type="submit">
+                            <label htmlFor="principleThreeLog">Log your answer here:</label>
+                            <textarea 
+                            rows="10" 
+                            cols="50"
+                            id="principleThreeLog" 
+                            onChange={this.props.handleChange}>
+                            </textarea>
+                            <button 
+                            onClick={this.handlePrincipleClick} 
+                            type="submit">
                                 <p>Submit and Continue</p>
                             </button>
                         </form>

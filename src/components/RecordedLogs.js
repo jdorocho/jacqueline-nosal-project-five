@@ -26,9 +26,9 @@ class RecordedLogs extends Component {
                         <div className="recorded-entry">
                             <p className="recorded-date">{this.state.date}</p>
                             <div className="recorded-logs-container">
-                                <ul>
-                                    {this.sendDataToParent}
-                                </ul>
+                                <ol>
+                                    {this.sendDataToParent()}
+                                </ol>
                             </div>
                             <p className="citation">2020 Jacqui Nosal. All credit and reference to the <cite>Agile Manifesto, values, and principles goes to “Learning Agile: Understanding Scrum, XP, Lean, and Kanban” by Andrew Stellman & Jennifer Greene</cite></p>
                         </div>

@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import '../index.css';
 
 class PrincipleFive extends Component {
-    sendDataToParent = () => {
+    handlePrincipleClick = (e) => {
         this.props.goToPrincipleSixProp();
+        this.props.handleClick(e, 'principleFive');
     }
 
     render() {
@@ -17,9 +18,16 @@ class PrincipleFive extends Component {
                             <p className="question">Are the Developers on your team working with business users every day so that they can deliver the most value?</p>
                         </div>
                         <form action="submit">
-                            <label htmlFor="reflection">Log your answer here:</label>
-                            <input type="text"/>
-                            <button onClick={this.sendDataToParent} type="submit">
+                            <label htmlFor="principleFiveLog">Log your answer here:</label>
+                            <textarea 
+                            rows="10" 
+                            cols="50"
+                            id="principleFiveLog" 
+                            onChange={this.props.handleChange}>
+                            </textarea>
+                            <button 
+                            onClick={this.handlePrincipleClick} 
+                            type="submit">
                                 <p>Submit and Continue</p>
                             </button>
                         </form>

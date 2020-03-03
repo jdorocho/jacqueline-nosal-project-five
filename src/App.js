@@ -17,6 +17,7 @@ class App extends Component {
     super();
     this.state = {
       logs: [],
+      userInput: 'test',
       showingWelcome: true,
       showingPrincipleOne: false,
       showingPrincipleTwo: false,
@@ -32,8 +33,9 @@ class App extends Component {
     const dbRef = firebase.database().ref();
 
     dbRef.on('value', (response) => {
-      const newState = [];
+      console.log(response.val());
 
+      const newState = [];
       const data = response.val();
 
       for (let key in data) {
@@ -41,15 +43,35 @@ class App extends Component {
       }
 
       this.setState({
-        books: newState
+        logs: newState
       });
     });
   }
 
   recordingLogs = () => {
     this.state.logs.map((log) => {
-      return <li>{log}</li>
+      return (
+        <li>
+          <p>{log}</p>
+        </li>
+      );
+    });
+  }
+
+  handleChange = (e) => {
+    this.setState({userInput: e.target.value})
+  }
+
+  handleClick = (e, principle) => {
+    e.preventDefault();
+    const dbRefUserResponses = firebase.database().ref(`/${principle}`);
+
+    dbRefUserResponses.update({
+      principle: principle,
+      userResponse: this.state.userInput
     })
+
+    this.setState({userInput: ""})
   }
 
   showPrincipleOne = () => {
@@ -144,17 +166,43 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.logs);
     return (
       <main>
         <section className="contents">
           <div className="wrapper">
             {this.state.showingWelcome ? <Welcome goToPrincipleOneProp={this.showPrincipleOne} /> : null}
-            {this.state.showingPrincipleOne ? <PrincipleOne goToPrincipleTwoProp={this.showPrincipleTwo} /> : null}
-            {this.state.showingPrincipleTwo ? <PrincipleTwo goToPrincipleThreeProp={this.showPrincipleThree} /> : null}
-            {this.state.showingPrincipleThree ? <PrincipleThree goToPrincipleFourProp={this.showPrincipleFour} /> : null}
-            {this.state.showingPrincipleFour ? <PrincipleFour goToPrincipleFiveProp={this.showPrincipleFive} /> : null}
-            {this.state.showingPrincipleFive ? <PrincipleFive goToPrincipleSixProp={this.showPrincipleSix} /> : null}
-            {this.state.showingPrincipleSix ? <PrincipleSix goToRecordedLogsProp={this.showRecordedLogs} /> : null}
+
+            {this.state.showingPrincipleOne ? <PrincipleOne 
+            goToPrincipleTwoProp={this.showPrincipleTwo} 
+            handleChange={this.handleChange} 
+            handleClick={this.handleClick} /> : null}
+
+            {this.state.showingPrincipleTwo ? <PrincipleTwo 
+            goToPrincipleThreeProp={this.showPrincipleThree} 
+            handleChange={this.handlChange}
+            handleClick={this.handleClick} /> : null}
+
+            {this.state.showingPrincipleThree ? <PrincipleThree 
+            goToPrincipleFourProp={this.showPrincipleFour} 
+            handleChange={this.handlChange}
+            handleClick={this.handleClick} /> : null}
+
+            {this.state.showingPrincipleFour ? <PrincipleFour 
+            goToPrincipleFiveProp={this.showPrincipleFive} 
+            handleChange={this.handlChange}
+            handleClick={this.handleClick} /> : null}
+
+            {this.state.showingPrincipleFive ? <PrincipleFive 
+            goToPrincipleSixProp={this.showPrincipleSix} 
+            handleChange={this.handlChange}
+            handleClick={this.handleClick} /> : null}
+
+            {this.state.showingPrincipleSix ? <PrincipleSix 
+            goToRecordedLogsProp={this.showRecordedLogs} 
+            handleChange={this.handlChange}
+            handleClick={this.handleClick} /> : null}
+
             {this.state.showingRecordedLogs ? <RecordedLogs startRecordingLogsProp={this.recordingLogs} /> : null}
           </div>
         </section>

@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import '../index.css';
 
 class PrincipleSix extends Component {
-    sendDataToParent = () => {
+    handlePrincipleClick = (e) => {
         this.props.goToRecordedLogsProp();
+        this.props.handleClick(e, 'principleSix');
     }
 
     render() {
@@ -17,9 +18,16 @@ class PrincipleSix extends Component {
                             <p className="question">Does everyone on your team feel responsible for the project, and feel accountable for its success?</p>
                         </div>
                         <form action="submit">
-                            <label htmlFor="reflection">Log your answer here:</label>
-                            <input type="text"/>
-                            <button onClick={this.sendDataToParent} type="submit">
+                            <label htmlFor="principleSixLog">Log your answer here:</label>
+                            <textarea 
+                            rows="10" 
+                            cols="50"
+                            id="principleSixLog" 
+                            onChange={this.props.handleChange}>
+                            </textarea>
+                            <button 
+                            onClick={this.handlePrincipleClick}
+                            type="submit">
                                 <p>Submit and Continue</p>
                             </button>
                         </form>
