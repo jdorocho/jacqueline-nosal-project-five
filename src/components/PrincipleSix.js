@@ -4,7 +4,7 @@ import '../index.css';
 class PrincipleSix extends Component {
     handlePrincipleClick = (e) => {
         this.props.goToRecordedLogsProp();
-        this.props.handleClick(e, 'principleSix');
+        this.props.handleClick(e, 'principle6');
     }
 
     render() {

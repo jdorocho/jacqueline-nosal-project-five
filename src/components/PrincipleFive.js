@@ -4,7 +4,7 @@ import '../index.css';
 class PrincipleFive extends Component {
     handlePrincipleClick = (e) => {
         this.props.goToPrincipleSixProp();
-        this.props.handleClick(e, 'principleFive');
+        this.props.handleClick(e, 'principle5');
     }
 
     render() {

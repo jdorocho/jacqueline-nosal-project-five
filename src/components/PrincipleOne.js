@@ -3,8 +3,8 @@ import '../index.css';
 
 class PrincipleOne extends Component {
     handlePrincipleClick = (e) => {
-        this.props.goToPrincipleTwoProp();
-        this.props.handleClick(e, 'principleOne');
+            this.props.goToPrincipleTwoProp();
+            this.props.handleClick(e, 'principle1');
     }
 
     render() {

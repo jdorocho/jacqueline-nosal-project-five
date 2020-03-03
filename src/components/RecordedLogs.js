@@ -13,11 +13,8 @@ class RecordedLogs extends Component {
         };
     }
 
-    sendDataToParent = () => {
-        this.props.startRecordingLogsProp();
-    }
-
     render() {
+        console.log(this.props.startRecordingLogsProp);
         return (
             <main>
                 <section className="principles-contents">
@@ -27,7 +24,13 @@ class RecordedLogs extends Component {
                             <p className="recorded-date">{this.state.date}</p>
                             <div className="recorded-logs-container">
                                 <ol>
-                                    {this.sendDataToParent()}
+                                    {this.props.startRecordingLogsProp.map((log, index) => {
+                                        return (
+                                            <li key={index}>
+                                                <p>{log.userResponse}</p>
+                                            </li>
+                                        );
+                                    })}
                                 </ol>
                             </div>
                             <p className="citation">2020 Jacqui Nosal. All credit and reference to the Agile Manifesto, values, and principles goes to <cite>“Learning Agile: Understanding Scrum, XP, Lean, and Kanban” by Andrew Stellman & Jennifer Greene</cite></p>

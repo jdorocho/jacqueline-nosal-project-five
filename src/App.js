@@ -17,7 +17,7 @@ class App extends Component {
     super();
     this.state = {
       logs: [],
-      userInput: 'test',
+      userInput: "",
       showingWelcome: true,
       showingPrincipleOne: false,
       showingPrincipleTwo: false,
@@ -45,16 +45,6 @@ class App extends Component {
       this.setState({
         logs: newState
       });
-    });
-  }
-
-  recordingLogs = () => {
-    this.state.logs.map((log) => {
-      return (
-        <li>
-          <p>{log}</p>
-        </li>
-      );
     });
   }
 
@@ -166,7 +156,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.logs);
     return (
       <main>
         <section className="contents">
@@ -203,7 +192,7 @@ class App extends Component {
             handleChange={this.handleChange}
             handleClick={this.handleClick} /> : null}
 
-            {this.state.showingRecordedLogs ? <RecordedLogs startRecordingLogsProp={this.recordingLogs} /> : null}
+            {this.state.showingRecordedLogs ? <RecordedLogs startRecordingLogsProp={this.state.logs} /> : null}
           </div>
         </section>
       </main>
