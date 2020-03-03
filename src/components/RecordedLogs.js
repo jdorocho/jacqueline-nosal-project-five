@@ -30,7 +30,7 @@ class RecordedLogs extends Component {
                                     {this.sendDataToParent()}
                                 </ol>
                             </div>
-                            <p className="citation">2020 Jacqui Nosal. All credit and reference to the <cite>Agile Manifesto, values, and principles goes to “Learning Agile: Understanding Scrum, XP, Lean, and Kanban” by Andrew Stellman & Jennifer Greene</cite></p>
+                            <p className="citation">2020 Jacqui Nosal. All credit and reference to the Agile Manifesto, values, and principles goes to <cite>“Learning Agile: Understanding Scrum, XP, Lean, and Kanban” by Andrew Stellman & Jennifer Greene</cite></p>
                         </div>
                     </div>
                 </section>

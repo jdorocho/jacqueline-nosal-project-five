@@ -180,27 +180,27 @@ class App extends Component {
 
             {this.state.showingPrincipleTwo ? <PrincipleTwo 
             goToPrincipleThreeProp={this.showPrincipleThree} 
-            handleChange={this.handlChange}
+            handleChange={this.handleChange}
             handleClick={this.handleClick} /> : null}
 
             {this.state.showingPrincipleThree ? <PrincipleThree 
             goToPrincipleFourProp={this.showPrincipleFour} 
-            handleChange={this.handlChange}
+            handleChange={this.handleChange}
             handleClick={this.handleClick} /> : null}
 
             {this.state.showingPrincipleFour ? <PrincipleFour 
             goToPrincipleFiveProp={this.showPrincipleFive} 
-            handleChange={this.handlChange}
+            handleChange={this.handleChange}
             handleClick={this.handleClick} /> : null}
 
             {this.state.showingPrincipleFive ? <PrincipleFive 
             goToPrincipleSixProp={this.showPrincipleSix} 
-            handleChange={this.handlChange}
+            handleChange={this.handleChange}
             handleClick={this.handleClick} /> : null}
 
             {this.state.showingPrincipleSix ? <PrincipleSix 
             goToRecordedLogsProp={this.showRecordedLogs} 
-            handleChange={this.handlChange}
+            handleChange={this.handleChange}
             handleClick={this.handleClick} /> : null}
 
             {this.state.showingRecordedLogs ? <RecordedLogs startRecordingLogsProp={this.recordingLogs} /> : null}
