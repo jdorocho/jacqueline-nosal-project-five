@@ -3,6 +3,7 @@ import './index.css';
 
 // Custom Imports
 import firebase from './firebase';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Welcome from './components/Welcome';
 import PrincipleOne from './components/PrincipleOne';
 import PrincipleTwo from './components/PrincipleTwo';
@@ -158,45 +159,48 @@ class App extends Component {
 
   render() {
     return (
+      <Router>
       <main>
-        <section className="contents">
-          <div className="wrapper">
-            {this.state.showingWelcome ? <Welcome goToPrincipleOneProp={this.showPrincipleOne} /> : null}
+          <section className="contents">
+            <div className="wrapper">
+              {/* {this.state.showingWelcome ? <Welcome goToPrincipleOneProp={this.showPrincipleOne} /> : null} */}
+              <Welcome />
 
-            {this.state.showingPrincipleOne ? <PrincipleOne 
-            goToPrincipleTwoProp={this.showPrincipleTwo} 
-            handleChange={this.handleChange} 
-            handleClick={this.handleClick} /> : null}
+              {this.state.showingPrincipleOne ? <PrincipleOne 
+              goToPrincipleTwoProp={this.showPrincipleTwo} 
+              handleChange={this.handleChange} 
+              handleClick={this.handleClick} /> : null}
 
-            {this.state.showingPrincipleTwo ? <PrincipleTwo 
-            goToPrincipleThreeProp={this.showPrincipleThree} 
-            handleChange={this.handleChange}
-            handleClick={this.handleClick} /> : null}
+              {this.state.showingPrincipleTwo ? <PrincipleTwo 
+              goToPrincipleThreeProp={this.showPrincipleThree} 
+              handleChange={this.handleChange}
+              handleClick={this.handleClick} /> : null}
 
-            {this.state.showingPrincipleThree ? <PrincipleThree 
-            goToPrincipleFourProp={this.showPrincipleFour} 
-            handleChange={this.handleChange}
-            handleClick={this.handleClick} /> : null}
+              {this.state.showingPrincipleThree ? <PrincipleThree 
+              goToPrincipleFourProp={this.showPrincipleFour} 
+              handleChange={this.handleChange}
+              handleClick={this.handleClick} /> : null}
 
-            {this.state.showingPrincipleFour ? <PrincipleFour 
-            goToPrincipleFiveProp={this.showPrincipleFive} 
-            handleChange={this.handleChange}
-            handleClick={this.handleClick} /> : null}
+              {this.state.showingPrincipleFour ? <PrincipleFour 
+              goToPrincipleFiveProp={this.showPrincipleFive} 
+              handleChange={this.handleChange}
+              handleClick={this.handleClick} /> : null}
 
-            {this.state.showingPrincipleFive ? <PrincipleFive 
-            goToPrincipleSixProp={this.showPrincipleSix} 
-            handleChange={this.handleChange}
-            handleClick={this.handleClick} /> : null}
+              {this.state.showingPrincipleFive ? <PrincipleFive 
+              goToPrincipleSixProp={this.showPrincipleSix} 
+              handleChange={this.handleChange}
+              handleClick={this.handleClick} /> : null}
 
-            {this.state.showingPrincipleSix ? <PrincipleSix 
-            goToRecordedLogsProp={this.showRecordedLogs} 
-            handleChange={this.handleChange}
-            handleClick={this.handleClick} /> : null}
+              {this.state.showingPrincipleSix ? <PrincipleSix 
+              goToRecordedLogsProp={this.showRecordedLogs} 
+              handleChange={this.handleChange}
+              handleClick={this.handleClick} /> : null}
 
-            {this.state.showingRecordedLogs ? <RecordedLogs startRecordingLogsProp={this.state.logs} /> : null}
-          </div>
-        </section>
-      </main>
+              {this.state.showingRecordedLogs ? <RecordedLogs startRecordingLogsProp={this.state.logs} /> : null}
+            </div>
+          </section>
+        </main>
+      </Router>
     );
   }
 }
