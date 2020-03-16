@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import '../index.css';
 
-class PrincipleSix extends Component {
+class PrincipleEleven extends Component {
     handlePrincipleClick = (e) => {
-        this.props.goToPrincipleSevenProp();
-        this.props.handleClick(e, 'principle6');
+        this.props.goToPrincipleTwelveProp();
+        this.props.handleClick(e, 'principle11');
     }
 
     render() {
@@ -14,15 +14,15 @@ class PrincipleSix extends Component {
                     <div className="wrapper">
                         <h2>Principles Check-In:</h2>
                         <div className="principles-top-text">
-                            <p><span className="principle-number">Principle #6:</span> Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.</p>
-                            <p className="question">Does everyone on your team feel responsible for the project, and feel accountable for its success?</p>
+                            <p><span className="principle-number">Principle #11:</span> The best architectures, requirements, and designs emerge from self-organizing teams.</p>
+                            <p className="question">Is your team sharing responsibility for all aspects of the project, from conceiving the product to project management to design and implementation?</p>
                         </div>
                         <form action="submit">
-                            <label htmlFor="principleSixLog">Log your answer here:</label>
+                            <label htmlFor="principleElevenLog">Log your answer here:</label>
                             <textarea 
                             rows="10" 
                             cols="50"
-                            id="principleSixLog" 
+                            id="principleElevenLog" 
                             onChange={this.props.handleChange}>
                             </textarea>
                             <button 
@@ -38,4 +38,4 @@ class PrincipleSix extends Component {
     }
 }
 
-export default PrincipleSix;
+export default PrincipleEleven;

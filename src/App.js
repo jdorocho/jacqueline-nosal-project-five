@@ -4,12 +4,19 @@ import './index.css';
 // Custom Imports
 import firebase from './firebase';
 import Welcome from './components/Welcome';
+import Values from './components/Values';
 import PrincipleOne from './components/PrincipleOne';
 import PrincipleTwo from './components/PrincipleTwo';
 import PrincipleThree from './components/PrincipleThree';
 import PrincipleFour from './components/PrincipleFour';
 import PrincipleFive from './components/PrincipleFive';
 import PrincipleSix from './components/PrincipleSix';
+import PrincipleSeven from './components/PrincipleSeven';
+import PrincipleEight from './components/PrincipleEight';
+import PrincipleNine from './components/PrincipleNine';
+import PrincipleTen from './components/PrincipleTen';
+import PrincipleEleven from './components/PrincipleEleven';
+import PrincipleTwelve from './components/PrincipleTwelve';
 import RecordedLogs from './components/RecordedLogs';
 
 class App extends Component {
@@ -19,12 +26,19 @@ class App extends Component {
       logs: [],
       userInput: "",
       showingWelcome: true,
+      showingValues: false,
       showingPrincipleOne: false,
       showingPrincipleTwo: false,
       showingPrincipleThree: false,
       showingPrincipleFour: false,
       showingPrincipleFive: false,
       showingPrincipleSix: false, 
+      showingPrincipleSeven: false,
+      showingPrincipleEight: false,
+      showingPrincipleNine: false,
+      showingPrincipleTen: false, 
+      showingPrincipleEleven: false,
+      showingPrincipleTwelve: false,
       showingRecordedLogs: false
     }
   }
@@ -65,15 +79,42 @@ class App extends Component {
   }
 
   // List of functions that determine which page is being shown
+  showValues = () => {
+    this.setState({
+      showingWelcome: false, 
+      showingValues: true,
+      showingPrincipleOne: false,
+      showingPrincipleTwo: false,
+      showingPrincipleThree: false,
+      showingPrincipleFour: false,
+      showingPrincipleFive: false,
+      showingPrincipleSix: false, 
+      showingPrincipleSeven: false,
+      showingPrincipleEight: false,
+      showingPrincipleNine: false,
+      showingPrincipleTen: false, 
+      showingPrincipleEleven: false,
+      showingPrincipleTwelve: false,
+      showingRecordedLogs: false
+    });
+  }
+
   showPrincipleOne = () => {
       this.setState({
           showingWelcome: false, 
+          showingValues: false,
           showingPrincipleOne: true,
           showingPrincipleTwo: false,
           showingPrincipleThree: false,
           showingPrincipleFour: false,
           showingPrincipleFive: false,
           showingPrincipleSix: false, 
+          showingPrincipleSeven: false,
+          showingPrincipleEight: false,
+          showingPrincipleNine: false,
+          showingPrincipleTen: false, 
+          showingPrincipleEleven: false,
+          showingPrincipleTwelve: false,
           showingRecordedLogs: false
       });
   }
@@ -81,12 +122,19 @@ class App extends Component {
   showPrincipleTwo = () => {
       this.setState({
           showingWelcome: false, 
+          showingValues: false,
           showingPrincipleOne: false,
           showingPrincipleTwo: true,
           showingPrincipleThree: false,
           showingPrincipleFour: false,
           showingPrincipleFive: false,
           showingPrincipleSix: false, 
+          showingPrincipleSeven: false,
+          showingPrincipleEight: false,
+          showingPrincipleNine: false,
+          showingPrincipleTen: false, 
+          showingPrincipleEleven: false,
+          showingPrincipleTwelve: false,
           showingRecordedLogs: false
       });
   }
@@ -94,12 +142,19 @@ class App extends Component {
   showPrincipleThree = () => {
     this.setState({
         showingWelcome: false, 
+        showingValues: false,
         showingPrincipleOne: false,
         showingPrincipleTwo: false,
         showingPrincipleThree: true,
         showingPrincipleFour: false,
         showingPrincipleFive: false,
         showingPrincipleSix: false, 
+        showingPrincipleSeven: false,
+        showingPrincipleEight: false,
+        showingPrincipleNine: false,
+        showingPrincipleTen: false, 
+        showingPrincipleEleven: false,
+        showingPrincipleTwelve: false,
         showingRecordedLogs: false
     });
   }
@@ -107,12 +162,19 @@ class App extends Component {
   showPrincipleFour = () => {
     this.setState({
         showingWelcome: false, 
+        showingValues: false,
         showingPrincipleOne: false,
         showingPrincipleTwo: false,
         showingPrincipleThree: false,
         showingPrincipleFour: true,
         showingPrincipleFive: false,
         showingPrincipleSix: false, 
+        showingPrincipleSeven: false,
+        showingPrincipleEight: false,
+        showingPrincipleNine: false,
+        showingPrincipleTen: false, 
+        showingPrincipleEleven: false,
+        showingPrincipleTwelve: false,
         showingRecordedLogs: false
     });
   }
@@ -120,12 +182,19 @@ class App extends Component {
   showPrincipleFive = () => {
     this.setState({
         showingWelcome: false, 
+        showingValues: false,
         showingPrincipleOne: false,
         showingPrincipleTwo: false,
         showingPrincipleThree: false,
         showingPrincipleFour: false,
         showingPrincipleFive: true,
         showingPrincipleSix: false, 
+        showingPrincipleSeven: false,
+        showingPrincipleEight: false,
+        showingPrincipleNine: false,
+        showingPrincipleTen: false, 
+        showingPrincipleEleven: false,
+        showingPrincipleTwelve: false,
         showingRecordedLogs: false
     });
   }
@@ -133,12 +202,139 @@ class App extends Component {
   showPrincipleSix = () => {
     this.setState({
         showingWelcome: false, 
+        showingValues: false,
         showingPrincipleOne: false,
         showingPrincipleTwo: false,
         showingPrincipleThree: false,
         showingPrincipleFour: false,
         showingPrincipleFive: false,
         showingPrincipleSix: true, 
+        showingPrincipleSeven: false,
+        showingPrincipleEight: false,
+        showingPrincipleNine: false,
+        showingPrincipleTen: false, 
+        showingPrincipleEleven: false,
+        showingPrincipleTwelve: false,
+        showingRecordedLogs: false
+    });
+  }
+
+  showPrincipleSeven = () => {
+    this.setState({
+        showingWelcome: false, 
+        showingValues: false,
+        showingPrincipleOne: false,
+        showingPrincipleTwo: false,
+        showingPrincipleThree: false,
+        showingPrincipleFour: false,
+        showingPrincipleFive: false,
+        showingPrincipleSix: false,
+        showingPrincipleSeven: true,
+        showingPrincipleEight: false,
+        showingPrincipleNine: false,
+        showingPrincipleTen: false, 
+        showingPrincipleEleven: false,
+        showingPrincipleTwelve: false,
+        showingRecordedLogs: false
+    });
+  }
+
+  showPrincipleEight = () => {
+    this.setState({
+        showingWelcome: false, 
+        showingValues: false,
+        showingPrincipleOne: false,
+        showingPrincipleTwo: false,
+        showingPrincipleThree: false,
+        showingPrincipleFour: false,
+        showingPrincipleFive: false,
+        showingPrincipleSix: false,
+        showingPrincipleSeven: false,
+        showingPrincipleEight: true,
+        showingPrincipleNine: false,
+        showingPrincipleTen: false, 
+        showingPrincipleEleven: false,
+        showingPrincipleTwelve: false,
+        showingRecordedLogs: false
+    });
+  }
+
+  showPrincipleNine = () => {
+    this.setState({
+        showingWelcome: false, 
+        showingValues: false,
+        showingPrincipleOne: false,
+        showingPrincipleTwo: false,
+        showingPrincipleThree: false,
+        showingPrincipleFour: false,
+        showingPrincipleFive: false,
+        showingPrincipleSix: false,
+        showingPrincipleSeven: false,
+        showingPrincipleEight: false,
+        showingPrincipleNine: true,
+        showingPrincipleTen: false, 
+        showingPrincipleEleven: false,
+        showingPrincipleTwelve: false,
+        showingRecordedLogs: false
+    });
+  }
+
+  showPrincipleTen = () => {
+    this.setState({
+        showingWelcome: false, 
+        showingValues: false,
+        showingPrincipleOne: false,
+        showingPrincipleTwo: false,
+        showingPrincipleThree: false,
+        showingPrincipleFour: false,
+        showingPrincipleFive: false,
+        showingPrincipleSix: false,
+        showingPrincipleSeven: false,
+        showingPrincipleEight: false,
+        showingPrincipleNine: false,
+        showingPrincipleTen: true, 
+        showingPrincipleEleven: false,
+        showingPrincipleTwelve: false,
+        showingRecordedLogs: false
+    });
+  }
+
+  showPrincipleEleven = () => {
+    this.setState({
+        showingWelcome: false, 
+        showingValues: false,
+        showingPrincipleOne: false,
+        showingPrincipleTwo: false,
+        showingPrincipleThree: false,
+        showingPrincipleFour: false,
+        showingPrincipleFive: false,
+        showingPrincipleSix: false,
+        showingPrincipleSeven: false,
+        showingPrincipleEight: false,
+        showingPrincipleNine: false,
+        showingPrincipleTen: false, 
+        showingPrincipleEleven: true,
+        showingPrincipleTwelve: false,
+        showingRecordedLogs: false
+    });
+  }
+
+  showPrincipleTwelve = () => {
+    this.setState({
+        showingWelcome: false, 
+        showingValues: false,
+        showingPrincipleOne: false,
+        showingPrincipleTwo: false,
+        showingPrincipleThree: false,
+        showingPrincipleFour: false,
+        showingPrincipleFive: false,
+        showingPrincipleSix: false,
+        showingPrincipleSeven: false,
+        showingPrincipleEight: false,
+        showingPrincipleNine: false,
+        showingPrincipleTen: false, 
+        showingPrincipleEleven: false,
+        showingPrincipleTwelve: true,
         showingRecordedLogs: false
     });
   }
@@ -146,12 +342,19 @@ class App extends Component {
   showRecordedLogs = () => {
     this.setState({
         showingWelcome: false, 
+        showingValues: false,
         showingPrincipleOne: false,
         showingPrincipleTwo: false,
         showingPrincipleThree: false,
         showingPrincipleFour: false,
         showingPrincipleFive: false,
         showingPrincipleSix: false, 
+        showingPrincipleSeven: false,
+        showingPrincipleEight: false,
+        showingPrincipleNine: false,
+        showingPrincipleTen: false, 
+        showingPrincipleEleven: false,
+        showingPrincipleTwelve: false,
         showingRecordedLogs: true
     });
   }
@@ -161,7 +364,9 @@ class App extends Component {
       <main>
         <section className="contents">
           <div className="wrapper">
-            {this.state.showingWelcome ? <Welcome goToPrincipleOneProp={this.showPrincipleOne} /> : null}
+            {this.state.showingWelcome ? <Welcome goToValuesProp={this.showValues} /> : null}
+
+            {this.state.showingValues ? <Values goToPrincipleOneProp={this.showPrincipleOne} /> : null}
 
             {this.state.showingPrincipleOne ? <PrincipleOne 
             goToPrincipleTwoProp={this.showPrincipleTwo} 
@@ -189,6 +394,36 @@ class App extends Component {
             handleClick={this.handleClick} /> : null}
 
             {this.state.showingPrincipleSix ? <PrincipleSix 
+            goToPrincipleSevenProp={this.showPrincipleSeven} 
+            handleChange={this.handleChange}
+            handleClick={this.handleClick} /> : null}
+
+            {this.state.showingPrincipleSeven ? <PrincipleSeven 
+            goToPrincipleEightProp={this.showPrincipleEight} 
+            handleChange={this.handleChange}
+            handleClick={this.handleClick} /> : null}
+
+            {this.state.showingPrincipleEight ? <PrincipleEight 
+            goToPrincipleNineProp={this.showPrincipleNine} 
+            handleChange={this.handleChange}
+            handleClick={this.handleClick} /> : null}
+
+            {this.state.showingPrincipleNine ? <PrincipleNine 
+            goToPrincipleTenProp={this.showPrincipleTen} 
+            handleChange={this.handleChange}
+            handleClick={this.handleClick} /> : null}
+
+            {this.state.showingPrincipleTen ? <PrincipleTen 
+            goToPrincipleElevenProp={this.showPrincipleEleven} 
+            handleChange={this.handleChange}
+            handleClick={this.handleClick} /> : null}
+
+            {this.state.showingPrincipleEleven ? <PrincipleEleven 
+            goToPrincipleTwelveProp={this.showPrincipleTwelve} 
+            handleChange={this.handleChange}
+            handleClick={this.handleClick} /> : null}
+
+            {this.state.showingPrincipleTwelve ? <PrincipleTwelve 
             goToRecordedLogsProp={this.showRecordedLogs} 
             handleChange={this.handleChange}
             handleClick={this.handleClick} /> : null}

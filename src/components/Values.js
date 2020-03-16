@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import '../index.css';
 
 class Values extends Component {
+    sendDataToParent = () => {
+        this.props.goToPrincipleOneProp();
+    }
+
     render() {
         return (
             <main>
@@ -23,7 +27,7 @@ class Values extends Component {
                             </li>
                         </ol>
                         <p>While there is value in the items on the right, we value the items on the left more.</p>
-                        <button>
+                        <button onClick={this.sendDataToParent} tabIndex="1">
                             <p>Continue to the Principles Check-in</p>
                         </button>
                     </div>

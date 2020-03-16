@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import '../index.css';
 
-class PrincipleSix extends Component {
+class PrincipleNine extends Component {
     handlePrincipleClick = (e) => {
-        this.props.goToPrincipleSevenProp();
-        this.props.handleClick(e, 'principle6');
+        this.props.goToPrincipleTenProp();
+        this.props.handleClick(e, 'principle9');
     }
 
     render() {
@@ -14,15 +14,15 @@ class PrincipleSix extends Component {
                     <div className="wrapper">
                         <h2>Principles Check-In:</h2>
                         <div className="principles-top-text">
-                            <p><span className="principle-number">Principle #6:</span> Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.</p>
-                            <p className="question">Does everyone on your team feel responsible for the project, and feel accountable for its success?</p>
+                            <p><span className="principle-number">Principle #9:</span> Continuous attention to technical excellence and good design enhances agility.</p>
+                            <p className="question">Has your team maintained a focus on software that’s designed and implemented well?</p>
                         </div>
                         <form action="submit">
-                            <label htmlFor="principleSixLog">Log your answer here:</label>
+                            <label htmlFor="principleNineLog">Log your answer here:</label>
                             <textarea 
                             rows="10" 
                             cols="50"
-                            id="principleSixLog" 
+                            id="principleNineLog" 
                             onChange={this.props.handleChange}>
                             </textarea>
                             <button 
@@ -38,4 +38,4 @@ class PrincipleSix extends Component {
     }
 }
 
-export default PrincipleSix;
+export default PrincipleNine;

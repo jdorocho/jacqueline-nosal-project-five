@@ -3,7 +3,7 @@ import '../index.css';
 
 class Welcome extends Component {
     sendDataToParent = () => {
-        this.props.goToPrincipleOneProp();
+        this.props.goToValuesProp();
     }
 
     render() {
