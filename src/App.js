@@ -71,6 +71,9 @@ class App extends Component {
     const dbRefUserResponses = firebase.database().ref(`/${principle}`);
 
     dbRefUserResponses.update({
+      // if (principle === "") {
+      //   dbRefUserResponses = firebase.database().ref("(no input)");
+      // } else {
       principle: principle,
       userResponse: this.state.userInput
     })
