@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/jacqueline-nosal-project-five/precache-manifest.f837237ccbf797832a74910e9a892ea9.js"
+  "/jacqueline-nosal-project-five/precache-manifest.1378b31175514a385c748ebcfb757c2a.js"
 );
 
 self.addEventListener('message', (event) => {
